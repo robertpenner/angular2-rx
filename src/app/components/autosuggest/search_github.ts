@@ -16,7 +16,6 @@ import { Autosuggest } from './autosuggest';
       <h2>Search Github repos</h2>
 
       <div><input autosuggest (term)="showResults($event)" type="text" /></div>
-
       <div>
         <div *ng-for="#item of items">
           {{ item }}
@@ -27,11 +26,7 @@ import { Autosuggest } from './autosuggest';
 })
 export class Search {
 
-  items: Array<string>;
-
-  constructor() {
-    this.items = [];
-  }
+  items: string[] = [];
 
   showResults(results: string[]) {
     this.items = results;
